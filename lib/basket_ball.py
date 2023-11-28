@@ -195,12 +195,18 @@ def num_points_per_game(name):
   for player in all_players:
     if player.get("name", "no such player") == name:
       return player.get("points_per_game")
-    else:
-      return "Playet not found"
+    
+  return "Player not found"
 
 
-# def player_age(player):
-#     return player["age"]
+def player_age(name):
+  for player in all_players:
+    if player.get("name") == name:
+      return player.get("age")
+
+  return "Player not found"
+
+
 
 # def team_colors(team):
 #     return team["colors"]
