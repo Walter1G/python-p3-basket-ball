@@ -208,16 +208,27 @@ def player_age(name):
 
 
 
-# def team_colors(team):
-#     return team["colors"]
+def team_colors(team):
+  for key in game_dict():
+    if game_dict().get(key).get("team_name") == team:
+      return game_dict().get(key).get("colors")
 
-# def team_names(dict):
-    
-#     names =[game_dict()["home"]["team_name"], game_dict()["away"]["team_name"]]
-#     return names
-# def player_numbers(team):
-    
-#     return numbers
+  return "No such Team"
+
+
+def team_names():
+  names = []
+  for key in game_dict():
+    names.append(game_dict().get(key).get("team_name"))
+  return names
+
+def player_numbers(team):
+  numbers = []
+  for key in game_dict():
+    if game_dict().get(key).get("team_name") == team:
+      for player in game_dict().get(key).get("players"):
+        numbers.append(player.get("number"))
+  return numbers
 
 # def player_stats(player):
     
