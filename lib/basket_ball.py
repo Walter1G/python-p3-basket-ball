@@ -182,3 +182,36 @@ def game_dict():
             ]
         }
     }
+
+
+#helpers
+home_players = game_dict()["home"]["players"]
+away_players = game_dict()["away"]["players"]
+all_players= home_players+away_players
+home_jersy = [player["number"] for player in home_players]
+away_jersy = [player["number"] for player in away_players]
+
+def num_points_per_game(name):
+  for player in all_players:
+    if player.get("name", "no such player") == name:
+      return player.get("points_per_game")
+    else:
+      return "Playet not found"
+
+
+# def player_age(player):
+#     return player["age"]
+
+# def team_colors(team):
+#     return team["colors"]
+
+# def team_names(dict):
+    
+#     names =[game_dict()["home"]["team_name"], game_dict()["away"]["team_name"]]
+#     return names
+# def player_numbers(team):
+    
+#     return numbers
+
+# def player_stats(player):
+    
