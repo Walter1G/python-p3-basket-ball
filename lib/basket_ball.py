@@ -230,5 +230,13 @@ def player_numbers(team):
         numbers.append(player.get("number"))
   return numbers
 
-# def player_stats(player):
+
+     
+
+def player_stats(name):
+  for key in game_dict():
+    for player in game_dict().get(key).get("players"):
+      if player.get("name") == name:
+        return player
+
     
